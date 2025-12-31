@@ -1,0 +1,27 @@
+{
+    "module_name":"cpa_go_script",
+    "output_dir":"./internal/model",
+    "db_list":[
+        {
+            "pkg":"console",
+            "link":"root:Kza5m%fzupV5@tcp(mysql-82820c8744b4-public.rds.volces.com:3306)/chuangliang_cpa_console?charset=utf8mb4&parseTime=True&loc=Local",
+            "db_name":"chuangliang_cpa_console",
+            "table":[],
+            "const":"DBCpaConsole"
+        },
+        {
+            "pkg":"cpa",
+            "link":"root:Kza5m%fzupV5@tcp(mysql-82820c8744b4-public.rds.volces.com:3306)/chuangliang_cid_cpa?charset=utf8mb4&parseTime=True&loc=Local",
+            "db_name":"chuangliang_cid_cpa",
+            "table":[],
+            "const":"DBCpaMain"
+        },
+        {
+            "pkg":"cpacid",
+            "link":"root:Kza5m%fzupV5@tcp(mysql-82820c8744b4-public.rds.volces.com:3306)/chuangliang_cid_ad_common?charset=utf8mb4&parseTime=True&loc=Local",
+            "db_name":"chuangliang_cid_ad_common",
+            "table":["jc_ad_report", "jc_ad_sum", "jc_callback_event", "jc_callback_log", "jc_callback_summary", "jc_link", "jc_link_update_logs","jc_report_log","jc_track_config"],
+            "const":"DBCpaCid"
+        }
+    ]
+}
