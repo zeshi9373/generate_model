@@ -279,9 +279,9 @@ func mysqlTypeToGoType(mysqlType, isNullable string) string {
 	case "char", "varchar", "text", "tinytext", "mediumtext", "longtext":
 		goType = "string"
 	case "date", "datetime", "timestamp":
-		goType = "time.Time"
+		goType = "string"
 	case "time":
-		goType = "time.Time"
+		goType = "string"
 	case "year":
 		goType = "int"
 	case "bit":
