@@ -209,9 +209,10 @@ func prepareTemplateData(tableName string, columns []ColumnInfo, item ListItem, 
 		field := ColumnField{
 			FieldName: toCamelCase(col.ColumnName),
 			GormTag:   buildGormTag(col),
-			JsonTag:   buildJsonTag(col.ColumnName),
-			GoType:    goType,
-			Comment:   col.ColumnComment,
+			// JsonTag:   buildJsonTag(col.ColumnName),
+			JsonTag: col.ColumnName,
+			GoType:  goType,
+			Comment: col.ColumnComment,
 		}
 		cols = append(cols, field)
 	}
@@ -274,8 +275,10 @@ func mysqlTypeToGoType(mysqlType, isNullable string) string {
 		goType = "int"
 	case "bigint":
 		goType = "int64"
-	case "float", "double", "decimal":
+	case "float", "double":
 		goType = "float64"
+	case "decimal":
+		goType = "decimal.Decimal"
 	case "char", "varchar", "text", "tinytext", "mediumtext", "longtext":
 		goType = "string"
 	case "date", "datetime", "timestamp":
